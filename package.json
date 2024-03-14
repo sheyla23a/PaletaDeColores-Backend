@@ -1,0 +1,12 @@
+{
+  "name": "paletacolores-backend",
+  "version": "1.0.0",
+  "description": "backend del proyecto  Paleta de colores",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sheyla luciana Astorga",
+  "license": "ISC"
+}

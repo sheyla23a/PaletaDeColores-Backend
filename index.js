@@ -4,6 +4,7 @@ import 'dotenv/config';
 import morgan from 'morgan';
 import {fileURLToPath} from 'url';
 import path from 'path';
+import coloresRouter from './src/routes/colores.routes.js';
 
 const app = express();
 app.set('port',process.env.PORT ||4002);
@@ -20,8 +21,5 @@ const __dirname = path.dirname(__filename)
 app.use(express.static(path.join(__dirname,'/public')))
 
 
+app.use('/api', coloresRouter)
 
-app.get('/nuevo',(req,res)=>{
-console.log('alguien solicito algo')
-res.send('respuesta desde nuestro backend de paleta de colores')
-})

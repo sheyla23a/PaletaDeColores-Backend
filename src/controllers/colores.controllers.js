@@ -44,3 +44,17 @@ export const obtenerColor = async (req,res)=>{
       res.status(500).json({mensaje:'Ocurrio un error al intentar editar el color'})
   }
   }
+
+  export const borrarColor = async(req,res)=>{
+    try{
+     const buscarColor = await Color.findById(req.params.id);
+     if(!buscarColor){
+       return res.status(404).json({mensaje:'No se pudo eliminar el color, el id es incorrecto'})
+     }
+     await Color.findByIdAndDelete(req.params.id);
+     res.status(200).json({mensaje:'El color fue eliminado exitosamente'});
+    }catch(error){
+        console.error(error)
+        res.status(500).json({mensaje:'Ocurrio un error al intentar borrar el color'})
+    }
+    }
